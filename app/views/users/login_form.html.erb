@@ -1,6 +1,6 @@
-<h2>Create a New User</h2>
+<h2>Login</h2>
 
-<%= form_with model: @user, local: true do |form| %>
+<%= form_with url: login_path, method: :post, data: { turbo: false } do |form| %>
   <%= form.label :name %>
   <%= form.text_field :name, required: true %><br>
 
@@ -13,5 +13,5 @@
   <%= form.label :password_confirmation %>
   <%= form.password_field :password_confirmation, required: true %><br>
   
-  <%= form.submit "Create New User" %>
+  <%= form.submit "Log In" %>
 <% end %>
